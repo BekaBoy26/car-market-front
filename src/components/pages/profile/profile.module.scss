@@ -1,0 +1,301 @@
+.profilePage {
+  min-height: calc(100vh - 100px);
+  padding: 40px 0;
+  background: #111827;
+
+  .profileLayout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 32px;
+  }
+
+  .profileCard {
+    height: fit-content;
+    padding: 28px;
+    background: #1f2937;
+    border: 1px solid #4b5563;
+    border-radius: 12px;
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 18px;
+
+      overflow: hidden;
+      border-radius: 50%;
+      background: #374151;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    h2 {
+      margin: 0;
+
+      color: #fff;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .email {
+      margin: 6px 0 0;
+
+      color: #9ca3af;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .divider {
+      height: 1px;
+      margin: 18px 0;
+
+      background: #4b5563;
+    }
+
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+
+      color: #9ca3af;
+      font-size: 14px;
+
+      span:last-child {
+        color: #fff;
+      }
+    }
+
+    .listButton,
+    .logoutButton {
+      width: 100%;
+      padding: 10px;
+
+      border-radius: 8px;
+
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .listButton {
+      border: none;
+
+      background: #3b82f6;
+      color: #fff;
+    }
+
+    .logoutButton {
+      margin-top: 8px;
+
+      border: 1px solid #4b5563;
+
+      background: transparent;
+      color: #fff;
+    }
+  }
+
+  .content {
+    min-width: 0;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 24px;
+
+    border-bottom: 1px solid #374151;
+  }
+
+  .tab {
+    padding: 0 0 14px;
+
+    border: none;
+    border-bottom: 2px solid transparent;
+
+    background: transparent;
+
+    color: #9ca3af;
+    font-size: 14px;
+    cursor: pointer;
+
+    &.active {
+      border-bottom-color: #3b82f6;
+      color: #fff;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding-top: 24px;
+  }
+
+  .carCard {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 88px;
+    padding: 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #4b5563;
+    border-radius: 10px;
+
+    background: #1f2937;
+
+    cursor: pointer;
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: #6b7280;
+    }
+  }
+
+  .image {
+    width: 86px;
+    height: 58px;
+    flex-shrink: 0;
+
+    overflow: hidden;
+    border-radius: 6px;
+
+    background: #374151;
+
+    img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
+
+  .noImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    color: #9ca3af;
+    font-size: 11px;
+  }
+
+  .carInfo {
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+    flex: 1;
+    margin-left: 14px;
+  }
+
+  .carDetails {
+    min-width: 0;
+    flex: 1;
+
+    h3 {
+      margin: 0;
+
+      overflow: hidden;
+
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .carTop {
+    display: flex;
+    gap: 6px;
+
+    margin-top: 3px;
+
+    color: #8fa4c0;
+    font-size: 12px;
+  }
+
+  .price {
+    margin-left: 20px;
+
+    color: #3b82f6;
+    font-size: 15px;
+    font-weight: 600;
+
+    white-space: nowrap;
+  }
+
+  .empty {
+    padding: 60px 20px;
+
+    border: 1px solid #374151;
+    border-radius: 10px;
+
+    background: #1f2937;
+
+    text-align: center;
+
+    h3 {
+      margin: 0;
+
+      color: #fff;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 8px 0 20px;
+
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 10px 18px;
+
+      border: none;
+      border-radius: 8px;
+
+      background: #3b82f6;
+      color: #fff;
+
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .profilePage {
+    .profileLayout {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .profilePage {
+    .carCard {
+      height: 76px;
+      padding: 10px;
+    }
+
+    .image {
+      width: 72px;
+      height: 52px;
+    }
+
+    .price {
+      font-size: 13px;
+    }
+  }
+}

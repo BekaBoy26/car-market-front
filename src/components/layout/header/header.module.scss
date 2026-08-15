@@ -1,0 +1,428 @@
+#header {
+  border-bottom: 1px solid gray;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #111827;
+  .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    .logo {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      h1 {
+        font-size: 26px;
+      }
+      .svg {
+        width: 56px;
+        height: 53px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: #3b82f6;
+        border-radius: 7px;
+        svg {
+          width: 32px;
+          height: 32px;
+          display: block;
+        }
+      }
+    }
+    button {
+      font-size: 16px;
+      border-radius: 10px;
+      background-color: #3b82f6;
+      padding: 12px 24px;
+      cursor: pointer;
+      &:hover {
+        background-color: #296ad3;
+      }
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      .navLink {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background 0.2s ease;
+        &:hover {
+          background: rgba(255, 255, 255, 0.12);
+        }
+      }
+      .favoriteActive {
+        fill: #2563eb;
+        stroke: #2563eb;
+      }
+      .addButton {
+        display: flex;
+        align-items: center;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        background: #3b82f6;
+        color: white;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background 0.2s ease;
+        &:hover {
+          background: #2563eb;
+        }
+      }
+      .profile {
+        margin-left: 10px;
+        width: 52px;
+        height: 52px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+        &:hover {
+          opacity: 0.9;
+        }
+        img {
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          object-fit: cover;
+          display: block;
+        }
+      }
+      .avatarFallback {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #cc123e;
+        color: white;
+        font-size: 15px;
+        font-weight: 700;
+      }
+    }
+    .signIn {
+      border: none;
+      color: white;
+    }
+    /* Mobile */
+    .mobileActions {
+      display: none;
+    }
+    .mobileMenu {
+      display: none;
+    }
+  }
+}
+@media (max-width: 1366px) {
+  #header {
+    .header {
+      padding: 18px 0;
+      .nav {
+        gap: 10px;
+        .navLink {
+          padding: 9px 13px;
+          font-size: 17px;
+        }
+        .addButton {
+          padding: 9px 14px;
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  #header {
+    .header {
+      .logo {
+        gap: 8px;
+        h1 {
+          font-size: 24px;
+        }
+        .svg {
+          width: 52px;
+          height: 50px;
+          svg {
+            width: 29px;
+            height: 29px;
+          }
+        }
+      }
+      .nav {
+        gap: 7px;
+        .navLink {
+          padding: 8px 10px;
+          font-size: 16px;
+        }
+        .addButton {
+          padding: 8px 12px;
+          font-size: 16px;
+        }
+        .profile {
+          width: 48px;
+          height: 48px;
+          img {
+            width: 48px;
+            height: 48px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  #header {
+    .header {
+      padding: 16px 0;
+      .nav {
+        gap: 4px;
+        .navLink {
+          padding: 8px;
+          font-size: 15px;
+        }
+        .addButton {
+          padding: 8px 10px;
+          font-size: 15px;
+        }
+        .profile {
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #header {
+    .header {
+      .logo {
+        h1 {
+          font-size: 22px;
+        }
+        .svg {
+          width: 48px;
+          height: 46px;
+          svg {
+            width: 27px;
+            height: 27px;
+          }
+        }
+      }
+      .nav {
+        .navLink {
+          font-size: 14px;
+        }
+        .addButton {
+          font-size: 14px;
+        }
+        .profile {
+          width: 46px;
+          height: 46px;
+          img {
+            width: 46px;
+            height: 46px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  #header {
+    .header {
+      padding: 12px 0;
+      .logo {
+        gap: 8px;
+        h1 {
+          font-size: 20px;
+        }
+        .svg {
+          width: 44px;
+          height: 43px;
+          border-radius: 6px;
+          svg {
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+      /* Hide desktop navigation */
+      .nav {
+        display: none;
+      }
+      /* Mobile right side */
+      .mobileActions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .mobileProfile {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+        img {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          object-fit: cover;
+          display: block;
+        }
+        .avatarFallback {
+          width: 44px;
+          height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background: #cc123e;
+          color: white;
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+      .menuButton {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 8px;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+      }
+      /* Mobile dropdown */
+      .mobileMenu {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        width: 240px;
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+        background: #111827;
+        border: 1px solid #374151;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      }
+      .mobileNavLink {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 13px 14px;
+        border: none;
+        border-radius: 7px;
+        background: transparent;
+        color: white;
+        font-size: 16px;
+        text-align: left;
+        cursor: pointer;
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+      }
+      .favoriteActive {
+        fill: #2563eb;
+        stroke: #2563eb;
+      }
+      .favoriteCount {
+        margin-left: auto;
+        min-width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: #2563eb;
+        color: white;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .addIcon {
+        font-size: 22px;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  #header {
+    .header {
+      padding: 10px 0;
+      .logo {
+        gap: 6px;
+        h1 {
+          font-size: 18px;
+        }
+        .svg {
+          width: 40px;
+          height: 39px;
+          svg {
+            width: 23px;
+            height: 23px;
+          }
+        }
+      }
+      .mobileActions {
+        gap: 6px;
+      }
+      .mobileProfile {
+        width: 40px;
+        height: 40px;
+        img {
+          width: 40px;
+          height: 40px;
+        }
+        .avatarFallback {
+          width: 40px;
+          height: 40px;
+          font-size: 13px;
+        }
+      }
+      .menuButton {
+        width: 40px;
+        height: 40px;
+      }
+      .mobileMenu {
+        width: 220px;
+      }
+    }
+  }
+}

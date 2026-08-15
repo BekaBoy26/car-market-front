@@ -1,0 +1,425 @@
+.editPage {
+  min-height: calc(100vh - 72px);
+  padding: 24px 0 40px;
+  background: #111827;
+  color: #ffffff;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 620px;
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto 22px;
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  &:hover {
+    color: #ffffff;
+  }
+  span {
+    margin-left: 2px;
+  }
+}
+
+.title {
+  width: 620px;
+  max-width: 100%;
+  margin: 0 auto 20px;
+  h1 {
+    margin: 0 0 5px;
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    color: #ffffff;
+  }
+  p {
+    margin: 0;
+    color: #9ca3af;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.form {
+  width: 620px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 22px 24px;
+  box-sizing: border-box;
+  border: 1px solid #273449;
+  border-radius: 10px;
+  background: #1f2937;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 15px;
+  label {
+    margin-bottom: 6px;
+    color: #cbd5e1;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    span {
+      margin-left: 3px;
+      color: #ef4444;
+    }
+  }
+  input,
+  select,
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    background: #374151;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+    &::placeholder {
+      color: #94a3b8;
+    }
+    &:focus {
+      border-color: #64748b;
+      box-shadow: 0 0 0 2px rgba(100, 116, 139, 0.15);
+    }
+  }
+  input,
+  select {
+    height: 40px;
+    padding: 0 13px;
+  }
+  textarea {
+    min-height: 90px;
+    padding: 10px 13px;
+    resize: vertical;
+    line-height: 19px;
+  }
+  select {
+    cursor: pointer;
+    option {
+      background: #1f2937;
+      color: #ffffff;
+    }
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.selectedImages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.imageItem {
+  position: relative;
+  width: 100px;
+  height: 72px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #374151;
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.removeImage {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #f3f4f6;
+  color: #111827;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+  &:hover {
+    background: #ffffff;
+    transform: scale(1.05);
+  }
+}
+
+.upload {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 105px;
+  box-sizing: border-box;
+  border: 1px dashed #4b5563;
+  border-radius: 7px;
+  background: #374151;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+  &:hover {
+    border-color: #64748b;
+    background: #3d4859;
+  }
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .uploadIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    font-size: 22px;
+    line-height: 22px;
+    color: #cbd5e1;
+  }
+  span:not(.uploadIcon) {
+    font-size: 13px;
+    line-height: 18px;
+    color: #cbd5e1;
+  }
+  small {
+    margin-top: 3px;
+    color: #94a3b8;
+    font-size: 11px;
+    line-height: 15px;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  button {
+    height: 40px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      opacity 0.2s ease;
+    &:first-child {
+      background: #2563eb;
+      color: #ffffff;
+      &:hover:not(:disabled) {
+        background: #1d4ed8;
+      }
+    }
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+  .cancel {
+    background: transparent;
+    color: #cbd5e1;
+    border: 1px solid #475569;
+    &:hover {
+      background: #374151;
+    }
+  }
+}
+
+.loading,
+.error {
+  width: 620px;
+  max-width: 100%;
+  margin: 0 auto;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .editPage {
+    padding: 22px 0 40px;
+  }
+  .form,
+  .title,
+  .back,
+  .loading,
+  .error {
+    width: 620px;
+  }
+}
+
+@media (max-width: 768px) {
+  .editPage {
+    padding: 20px 0 40px;
+  }
+  .back,
+  .title,
+  .form,
+  .loading,
+  .error {
+    width: 100%;
+  }
+  .title {
+    h1 {
+      font-size: 26px;
+      line-height: 32px;
+    }
+  }
+  .form {
+    padding: 20px;
+  }
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    button {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .editPage {
+    padding: 16px 0 35px;
+  }
+  .title {
+    margin-bottom: 16px;
+    h1 {
+      font-size: 23px;
+      line-height: 29px;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
+  .form {
+    padding: 18px;
+  }
+  .field {
+    margin-bottom: 14px;
+    label {
+      font-size: 12px;
+    }
+    input,
+    select {
+      height: 40px;
+      font-size: 13px;
+    }
+    textarea {
+      font-size: 13px;
+    }
+  }
+  .upload {
+    min-height: 100px;
+    span:not(.uploadIcon) {
+      font-size: 12px;
+    }
+    small {
+      font-size: 10px;
+    }
+  }
+  .imageItem {
+    width: 90px;
+    height: 65px;
+  }
+}
+
+@media (max-width: 475px) {
+  .editPage {
+    padding: 14px 0 30px;
+  }
+  .back {
+    margin-bottom: 16px;
+    font-size: 12px;
+  }
+  .title {
+    h1 {
+      font-size: 21px;
+      line-height: 27px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+  .form {
+    padding: 15px;
+    border-radius: 8px;
+  }
+  .field {
+    margin-bottom: 13px;
+    label {
+      font-size: 11px;
+    }
+    input,
+    select {
+      height: 38px;
+      padding: 0 10px;
+      font-size: 12px;
+    }
+    textarea {
+      min-height: 85px;
+      padding: 9px 10px;
+      font-size: 12px;
+    }
+  }
+  .upload {
+    min-height: 95px;
+    span:not(.uploadIcon) {
+      font-size: 11px;
+    }
+  }
+  .imageItem {
+    width: 80px;
+    height: 58px;
+  }
+  .removeImage {
+    width: 18px;
+    height: 18px;
+    font-size: 13px;
+  }
+  .actions {
+    margin-top: 17px;
+    button {
+      height: 38px;
+      font-size: 13px;
+    }
+  }
+}
