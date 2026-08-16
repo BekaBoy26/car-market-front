@@ -35,10 +35,7 @@ const ProfilePage = () => {
             <aside className={scss.profileCard}>
               <div className={scss.avatar}>
                 {profile?.avatar && (
-                  <img
-                    src={`http://localhost:5000/uploads/${profile.avatar}`}
-                    alt="Profile"
-                  />
+                  <img src={getImageUrl(profile.avatar)} alt="Profile" />
                 )}
               </div>
 

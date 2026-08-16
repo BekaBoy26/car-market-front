@@ -6,6 +6,7 @@ import scss from "./header.module.scss";
 import { useRouter } from "next/navigation";
 import { useGetProfile } from "@/hooks/profile/useGetProfile";
 import { useGetFavorites } from "@/hooks/favorites/useGetFavorites";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 const Header = () => {
   const router = useRouter();
@@ -52,7 +53,7 @@ const Header = () => {
 
   const avatar = profile?.avatar ? (
     <img
-      src={`http://localhost:5000/uploads/${profile.avatar}`}
+      src={getImageUrl(profile.avatar)}
       alt="Profile"
     />
   ) : (
