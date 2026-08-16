@@ -2,6 +2,10 @@ import axios from "axios";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
+export const contactApi = axios.create({
+  baseURL: API_URL,
+});
+
 export const authApi = axios.create({
   baseURL: `${API_URL}/auth`,
 });

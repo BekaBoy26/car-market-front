@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import scss from "./contactModal.module.scss";
+import { contactApi } from "@/api/api";
 
 interface IContactModalProps {
   clientEmail: string;
@@ -26,19 +27,13 @@ const ContactModal = ({
     try {
       setLoading(true);
 
-      const response = await fetch("http://localhost:5000/contact-seller", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          clientEmail,
-          sellerEmail,
-          message: message.trim(),
-        }),
+      const response = await contactApi.post("/contact-seller", {
+        clientEmail,
+        sellerEmail,
+        message: message.trim(),
       });
 
-      if (!response.ok) throw new Error();
+      if (!response.data) throw new Error();
 
       setSent(true);
       setTimeout(onClose, 1000);
