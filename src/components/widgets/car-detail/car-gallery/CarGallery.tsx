@@ -17,10 +17,7 @@ const CarGallery = ({ images, model }: ICarGalleryProps) => {
   return (
     <div className={scss.gallery}>
       <div className={scss.mainImage}>
-        <img
-          src={`http://localhost:5000/uploads/${uniqueImages[selected]}`}
-          alt={model}
-        />
+        <img src={getImageUrl(uniqueImages[selected])} alt={model} />
       </div>
 
       <div className={scss.thumbnails}>
